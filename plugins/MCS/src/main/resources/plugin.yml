@@ -11,3 +11,7 @@ commands:
     description: Sends a message to admin everytime a valuable block is broken
   updateconfig:
     description: Reloads the config
+  enderchest:
+    aliases:
+      - ec
+    description: Opens the enderchest of player or specific target

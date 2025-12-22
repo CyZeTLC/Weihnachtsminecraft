@@ -33,6 +33,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Main extends JavaPlugin implements Listener {
@@ -67,6 +68,8 @@ public class Main extends JavaPlugin implements Listener {
         this.getCommand("stats").setExecutor(new StatsCommand());
         this.getCommand("updateconfig").setExecutor(new UpdateConfigCommand());
         this.getCommand("viewblocks").setExecutor(new ViewBlocksCommand());
+        this.getCommand("enderchest").setExecutor(new ViewBlocksCommand());
+        this.getCommand("enderchest").setAliases(Arrays.asList("ec"));
     }
 
     public void loadConfigs() {
