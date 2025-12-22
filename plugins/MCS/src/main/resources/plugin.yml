@@ -1,4 +1,5 @@
 name: MCS
+author: CyZeTLC
 main: de.cyzetlc.mcs.Main
 version: 1.0
 api-version: '1.20'
