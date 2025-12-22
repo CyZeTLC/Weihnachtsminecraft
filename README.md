@@ -17,6 +17,7 @@
 ![GitHub License](https://img.shields.io/github/license/CyZeTLC/Weihnachtsminecraft?style=for-the-badge)
 ![GitHub stars](https://img.shields.io/github/stars/CyZeTLC/Weihnachtsminecraft?style=for-the-badge)
 ![Minecraft Version](https://img.shields.io/badge/Minecraft-1.20.x-green?style=for-the-badge&logo=minecraft)
+![Letze Aenderung](https://img.shields.io/github/last-commit/CyZeTLC/Weihnachtsminecraft?style=for-the-badge)
 
 </div>
 
