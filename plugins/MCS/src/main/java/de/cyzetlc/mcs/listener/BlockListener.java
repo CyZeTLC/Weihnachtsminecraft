@@ -49,13 +49,14 @@ public class BlockListener implements Listener {
         }
 
         if (isChest(e.getBlock().getType())) {
-            logChestBreak(e.getPlayer(), e.getBlock().getLocation());
+            if (Main.getInstance().getConfig().getBoolean("enableChestBreakLog")) {
+                logChestBreak(e.getPlayer(), e.getBlock().getLocation());
+            }
         }
     }
 
     @EventHandler
     public void handleChestInteract(PlayerInteractEvent e) {
-
         if (e.getAction() != Action.RIGHT_CLICK_BLOCK) return;
         if (e.getClickedBlock() == null) return;
 
@@ -63,29 +64,23 @@ public class BlockListener implements Listener {
 
         if (!isChest(type)) return;
 
-        logChestInteract(e.getPlayer(), e.getClickedBlock().getLocation());
+        if (Main.getInstance().getConfig().getBoolean("enableChestInteractionLog")) {
+            logChestInteract(e.getPlayer(), e.getClickedBlock().getLocation());
+        }
     }
 
-    private void logChestInteract(Player player, Location loc) {
-        File file = new File(Main.getInstance().getDataFolder(), "chest-interactions.yml");
-        FileConfiguration cfg = YamlConfiguration.loadConfiguration(file);
-
+    public void logChestInteract(Player player, Location loc) {
         String id = String.valueOf(System.currentTimeMillis());
+        FileConfiguration interactionCfg = Main.getInstance().getInteractionCfg();
 
-        cfg.set("interactions." + id + ".player", player.getName());
-        cfg.set("interactions." + id + ".uuid", player.getUniqueId().toString());
-        cfg.set("interactions." + id + ".world", loc.getWorld().getName());
-        cfg.set("interactions." + id + ".x", loc.getBlockX());
-        cfg.set("interactions." + id + ".y", loc.getBlockY());
-        cfg.set("interactions." + id + ".z", loc.getBlockZ());
-        cfg.set("interactions." + id + ".time", formatNow());
-        cfg.set("interactions." + id + ".action", "OPEN");
-
-        try {
-            cfg.save(file);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        interactionCfg.set("interactions." + id + ".player", player.getName());
+        interactionCfg.set("interactions." + id + ".uuid", player.getUniqueId().toString());
+        interactionCfg.set("interactions." + id + ".world", loc.getWorld().getName());
+        interactionCfg.set("interactions." + id + ".x", loc.getBlockX());
+        interactionCfg.set("interactions." + id + ".y", loc.getBlockY());
+        interactionCfg.set("interactions." + id + ".z", loc.getBlockZ());
+        interactionCfg.set("interactions." + id + ".time", formatNow());
+        interactionCfg.set("interactions." + id + ".action", "OPEN");
     }
 
     private void logChestBreak(Player player, Location loc) {

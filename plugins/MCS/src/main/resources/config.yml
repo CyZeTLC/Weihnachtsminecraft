@@ -1,0 +1,30 @@
+############################################################
+#  __  __   _____   _____ 
+# |  \/  | / ____| / ____|
+# | \  / || |      | (___  
+# | |\/| || |       \___ \ 
+# | |  | || |____   ____) |
+# |_|  |_| \_____| |_____/ 
+#
+#  MCS
+#  Made by CyZeTLC
+############################################################
+
+
+# ==========================================================
+# Chest Interaction Settings
+# ==========================================================
+
+# Loggt das Öffnen und Interagieren mit Kisten
+enableChestInteractionLog: false
+
+# Loggt das Zerstören von Kisten
+enableChestBreakLog: true
+
+
+# ==========================================================
+# Display Settings
+# ==========================================================
+
+# Zeigt einen Admin-Prefix in der Tablist an
+displayAdminPrefix: true

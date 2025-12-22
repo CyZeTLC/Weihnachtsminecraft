@@ -12,7 +12,9 @@ public class ConnectionListener implements Listener {
         Player p = e.getPlayer();
 
         if (p.hasPermission("*")) {
-            p.setPlayerListName("§cA: §r" + e.getPlayer().getName());
+            if (Main.getInstance().getConfig().getBoolean("displayAdminPrefix")) {
+                p.setPlayerListName("§cA: §r" + p.getName());
+            }
 
             if (Main.getInstance().getViewBlockBreakList().contains(p)) {
                 p.sendMessage(Main.BLOCK_LOG_PREFIX + "§7Der §eBlock-Log §7ist für dich §aaktiviert§7!");

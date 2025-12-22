@@ -8,3 +8,5 @@ commands:
     description: Displays stats of player (e.g. deaths, kills, ..)
   viewblocks:
     description: Sends a message to admin everytime a valuable block is broken
+  updateconfig:
+    description: Reloads the config
