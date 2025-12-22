@@ -47,7 +47,7 @@ Das Projekt umfasst nicht nur Plugins, sondern auch die komplette Server-Steueru
 
 ## Mitwirken
 
-Beiträge von ehemaligen Schülern sind herzlich willkommen!
+Beiträge von aktuellen & ehemaligen Schülern sind herzlich willkommen!
 1. Forke das Projekt.
 2. Erstelle einen Feature Branch (`git checkout -b feature/NeuesFeature`).
 3. Committe deine Änderungen (`git commit -m 'Add some feature'`).
@@ -57,5 +57,5 @@ Beiträge von ehemaligen Schülern sind herzlich willkommen!
 ---
 
 <div align="center">
-  Erstellt mit ❤️ für die Schulgemeinschaft von Tom Coombs.
+  Erstellt mit ❤️ von Tom Coombs.
 </div>
