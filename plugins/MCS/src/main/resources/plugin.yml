@@ -12,6 +12,5 @@ commands:
   updateconfig:
     description: Reloads the config
   enderchest:
-    aliases:
-      - ec
+    aliases: [ec]
     description: Opens the enderchest of player or specific target

@@ -15,6 +15,7 @@
  */
 package de.cyzetlc.mcs;
 
+import de.cyzetlc.mcs.commands.EnderChestCommand;
 import de.cyzetlc.mcs.commands.StatsCommand;
 import de.cyzetlc.mcs.commands.UpdateConfigCommand;
 import de.cyzetlc.mcs.commands.ViewBlocksCommand;
@@ -68,8 +69,7 @@ public class Main extends JavaPlugin implements Listener {
         this.getCommand("stats").setExecutor(new StatsCommand());
         this.getCommand("updateconfig").setExecutor(new UpdateConfigCommand());
         this.getCommand("viewblocks").setExecutor(new ViewBlocksCommand());
-        this.getCommand("enderchest").setExecutor(new ViewBlocksCommand());
-        this.getCommand("enderchest").setAliases(Arrays.asList("ec"));
+        this.getCommand("enderchest").setExecutor(new EnderChestCommand());
     }
 
     public void loadConfigs() {
