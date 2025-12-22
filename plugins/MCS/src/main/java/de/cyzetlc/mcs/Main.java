@@ -20,6 +20,7 @@ import de.cyzetlc.mcs.commands.UpdateConfigCommand;
 import de.cyzetlc.mcs.commands.ViewBlocksCommand;
 import de.cyzetlc.mcs.listener.BlockListener;
 import de.cyzetlc.mcs.listener.ConnectionListener;
+import lombok.Getter;
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
@@ -35,18 +36,22 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Main extends JavaPlugin implements Listener {
+    @Getter
     private static Main instance;
 
+    @Getter
     private List<Player> viewBlockBreakList = new ArrayList<>();
 
     public static final String BLOCK_LOG_PREFIX = "§e§lBlock-Log §8§l⨠ ";
 
     private File interactionFile;
 
+    @Getter
     private FileConfiguration interactionCfg;
 
     private File breakFile;
 
+    @Getter
     private FileConfiguration breakCfg;
 
     @Override
@@ -113,21 +118,5 @@ public class Main extends JavaPlugin implements Listener {
                 e.setCancelled(true);
             }
         }
-    }
-
-    public FileConfiguration getBreakCfg() {
-        return breakCfg;
-    }
-
-    public FileConfiguration getInteractionCfg() {
-        return interactionCfg;
-    }
-
-    public List<Player> getViewBlockBreakList() {
-        return viewBlockBreakList;
-    }
-
-    public static Main getInstance() {
-        return instance;
     }
 }
