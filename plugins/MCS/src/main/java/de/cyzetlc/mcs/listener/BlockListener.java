@@ -84,10 +84,8 @@ public class BlockListener implements Listener {
     }
 
     private void logChestBreak(Player player, Location loc) {
-        File file = new File(Main.getInstance().getDataFolder(), "chest-breaks.yml");
-        FileConfiguration cfg = YamlConfiguration.loadConfiguration(file);
-
         String id = String.valueOf(System.currentTimeMillis());
+        FileConfiguration cfg = Main.getInstance().getBreakCfg();
 
         cfg.set("breaks." + id + ".player", player.getName());
         cfg.set("breaks." + id + ".uuid", player.getUniqueId().toString());
@@ -96,12 +94,6 @@ public class BlockListener implements Listener {
         cfg.set("breaks." + id + ".y", loc.getBlockY());
         cfg.set("breaks." + id + ".z", loc.getBlockZ());
         cfg.set("breaks." + id + ".time", formatNow());
-
-        try {
-            cfg.save(file);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
     }
 
     private boolean isChest(Material material) {

@@ -30,6 +30,10 @@ public class Main extends JavaPlugin implements Listener {
 
     private FileConfiguration interactionCfg;
 
+    private File breakFile;
+
+    private FileConfiguration breakCfg;
+
     @Override
     public void onEnable() {
         super.onEnable();
@@ -49,12 +53,19 @@ public class Main extends JavaPlugin implements Listener {
         this.saveDefaultConfig();
 
         this.interactionFile = new File(getDataFolder(), "chest-interactions.yml");
+        this.breakFile = new File(getDataFolder(), "chest-breaks.yml");
 
         if (!this.interactionFile.exists()) {
             this.saveResource("chest-interactions.yml", false);
         }
 
+        if (!this.breakFile.exists()) {
+            this.saveResource("chest-breaks.yml", false);
+        }
+
         this.interactionCfg = YamlConfiguration.loadConfiguration(interactionFile);
+        this.breakCfg = YamlConfiguration.loadConfiguration(breakFile);
+
         this.autoSaveChestLog();
     }
 
@@ -63,6 +74,10 @@ public class Main extends JavaPlugin implements Listener {
             try {
                 if (this.getConfig().getBoolean("enableChestInteractionLog")) {
                     this.interactionCfg.save(this.interactionFile);
+                }
+
+                if (this.getConfig().getBoolean("enableChestBreakLog")) {
+                    this.breakCfg.save(this.breakFile);
                 }
             } catch (IOException e) {
                 e.printStackTrace();
@@ -83,6 +98,10 @@ public class Main extends JavaPlugin implements Listener {
                 e.setCancelled(true);
             }
         }
+    }
+
+    public FileConfiguration getBreakCfg() {
+        return breakCfg;
     }
 
     public FileConfiguration getInteractionCfg() {
