@@ -14,3 +14,6 @@ commands:
   enderchest:
     aliases: [ec]
     description: Opens the enderchest of player or specific target
+  invsee:
+    aliases: [ inv ]
+    description: Opens the inventory of player or specific target

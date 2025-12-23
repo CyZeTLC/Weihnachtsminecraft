@@ -15,10 +15,7 @@
  */
 package de.cyzetlc.mcs;
 
-import de.cyzetlc.mcs.commands.EnderChestCommand;
-import de.cyzetlc.mcs.commands.StatsCommand;
-import de.cyzetlc.mcs.commands.UpdateConfigCommand;
-import de.cyzetlc.mcs.commands.ViewBlocksCommand;
+import de.cyzetlc.mcs.commands.*;
 import de.cyzetlc.mcs.listener.BlockListener;
 import de.cyzetlc.mcs.listener.ConnectionListener;
 import lombok.Getter;
@@ -70,6 +67,7 @@ public class Main extends JavaPlugin implements Listener {
         this.getCommand("updateconfig").setExecutor(new UpdateConfigCommand());
         this.getCommand("viewblocks").setExecutor(new ViewBlocksCommand());
         this.getCommand("enderchest").setExecutor(new EnderChestCommand());
+        this.getCommand("invsee").setExecutor(new InvSeeCommand());
     }
 
     public void loadConfigs() {
