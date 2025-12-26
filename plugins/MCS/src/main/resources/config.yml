@@ -28,3 +28,6 @@ enableChestBreakLog: true
 
 # Zeigt einen Admin-Prefix in der Tablist an
 displayAdminPrefix: true
+
+# Ändert das default Chatformat zu einem modernen Design
+enableChatFormat: false
