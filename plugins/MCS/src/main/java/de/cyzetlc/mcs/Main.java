@@ -18,6 +18,7 @@ package de.cyzetlc.mcs;
 import de.cyzetlc.mcs.commands.*;
 import de.cyzetlc.mcs.listener.BlockListener;
 import de.cyzetlc.mcs.listener.ConnectionListener;
+import de.cyzetlc.mcs.listener.PortalListener;
 import lombok.Getter;
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.FileConfiguration;
@@ -63,6 +64,7 @@ public class Main extends JavaPlugin implements Listener {
         this.getServer().getPluginManager().registerEvents(this, this);
         this.getServer().getPluginManager().registerEvents(new BlockListener(), this);
         this.getServer().getPluginManager().registerEvents(new ConnectionListener(), this);
+        this.getServer().getPluginManager().registerEvents(new PortalListener(), this);
         this.getCommand("stats").setExecutor(new StatsCommand());
         this.getCommand("updateconfig").setExecutor(new UpdateConfigCommand());
         this.getCommand("viewblocks").setExecutor(new ViewBlocksCommand());
